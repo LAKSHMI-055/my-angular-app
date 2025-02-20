@@ -1,0 +1,27 @@
+<p>HELLO!</p>
+<p>WELCOME!</p>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp8VDOOCRjxQIlq-btrySpakiXS50YiwpH9Q&s" alt="Todo LIST IMAGE" class="image container">
+
+
+<h2>Todo List</h2>
+
+<div class="addtask">
+<input [(ngModel)]="newTask" placeholder="ENTER THE TASK">
+<button (click)="addTask()">Add Task</button>
+</div>
+
+<div class="taskList">
+<li *ngFor="let todoItem of todoList;let i=index">
+
+<input type="checkbox" name="" id="" (change)="toggleCompleted(i)">
+<span [class.completed]="todoItem.completed" >{{todoItem.task}}</span>
+<button class="deleteButton" (click)="deleteTask(todoItem.id)">Delete</button>                                              
+
+</li>
+</div>
+
+<router-outlet/>
+
+
+
